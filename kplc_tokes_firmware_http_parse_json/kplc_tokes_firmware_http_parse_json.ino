@@ -2,8 +2,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "THE DEVELOPER";
-const char* password = "MANAGEMENT2";
+const char* ssid = "THE DEVELOPER";  // enter your network name
+const char* password = "MANAGEMENT2"; // enter your network password
 
 String received_json;
 
@@ -38,8 +38,9 @@ void loop() {
         Serial.println(error.c_str());
         return;
       }
-
-      int id = doc["id"];
+      
+      // Extracting the data needed from the parsed JSON
+      int id = doc["id"]; // Here I expect an id from the JSON so I extract and can be used to do anything 
       Serial.print("My JsonID is: ");
       Serial.println(String(id));
 
